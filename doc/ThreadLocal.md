@@ -8,21 +8,27 @@
 `因此对于不同的线程，每次获取存储的副本值时，别的线程并不能获得当前线程的副本值，形成副本的隔离，互不干扰`
 
 Thread内部ThreadLocalMap在类中描述
-   ` public class Thread implements Runnable {
-   /*  ThreadLocal values pertaining to this thread. This map is maintained
-     *  by the ThreadLocal class. */
-        //与此线程相关的threadlocal值。Map是由threadlocal维护的
-        ThreadLocal.ThreadLocalMap threadLocals = null;
-    }
-    `
+```
+public class Thread implements Runnable {
+/*  ThreadLocal values pertaining to this thread. This map is maintained
+ *  by the ThreadLocal class.
+ */
+
+    //与此线程相关的threadlocal值。Map是由ThreadLocal维护的
+    ThreadLocal.ThreadLocalMap threadLocals = null;
+}
+```
+
 ## ThreadLocal解析
 核心方法
 
-` private T setInitialValue()
- public T get()
- public void set(T value)
- public void remove()
-`
+```
+private T setInitialValue()
+public T get()
+public void set(T value)
+public void remove()
+```
+
 * setInitialValue() 用于获取初始化当前线程的变量值
 * get() 用于获取当前线程的变量值
 * set() 用于设置当前线程的变量值
@@ -103,7 +109,7 @@ ThreadLocalMap getMap(Thread t) {
     return t.threadLocals;
 }
 ```
-     
+
 ## 类图
 
 ![示例ThreadLocalMap](https://raw.githubusercontent.com/wxmylife/wxmylife/master/art/ThreadLocalMap.webp)
