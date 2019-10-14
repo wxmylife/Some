@@ -110,6 +110,8 @@ ThreadLocalMap getMap(Thread t) {
 }
 ```
 
-## 类图
+## ThreadLocalMap
+
+  ThreadLocalMap是ThreadLocal的内部类，没有实现Map接口，用独立的方式实现了Map的功能，其内部的Entry也独立实现。
 
 ![示例ThreadLocalMap](https://raw.githubusercontent.com/wxmylife/wxmylife/master/art/ThreadLocalMap.webp)
