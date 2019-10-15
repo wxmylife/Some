@@ -1,6 +1,5 @@
 package com.wxmylife.sample.handle;
 
-import android.os.Message;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
